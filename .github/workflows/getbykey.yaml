@@ -34,8 +34,5 @@ jobs:
       - name: 'Fetch'
         id: 'fetch'
         run:
-          REPLY='Amnesiac'
-          [[ ${{ inputs.key }} == 'red' ]] && REPLY=Apples
-          [[ ${{ inputs.key }} == 'green' ]] && REPLY=Kiwi
-          echo "::set-output name=value::${REPLY}"
+          dist/fetch ${{ inputs.key }}
 
