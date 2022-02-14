@@ -35,7 +35,7 @@ jobs:
         id: 'fetch'
         run:
           REPLY='Amnesiac'
-          [[ ${{ input.key }} == 'red' ]] && REPLY=Apples
-          [[ ${{ input.key }} == 'green' ]] && REPLY=Kiwi
+          [[ ${{ inputs.key }} == 'red' ]] && REPLY=Apples
+          [[ ${{ inputs.key }} == 'green' ]] && REPLY=Kiwi
           echo "::set-output name=value::${REPLY}"
 
