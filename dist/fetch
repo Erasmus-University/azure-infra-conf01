@@ -1,0 +1,6 @@
+#!/bin/bash
+
+REPLY='Amnesiac'
+[[ ${{ inputs.key }} == 'red' ]] && REPLY=Apples
+[[ ${{ inputs.key }} == 'green' ]] && REPLY=Kiwi
+echo "::set-output name=value::${REPLY}"
