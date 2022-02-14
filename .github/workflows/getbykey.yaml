@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       result:
-        ${{ steps.fetch.value }}
+        ${{ steps.fetch.outputs.value }}
 
     steps:
       - uses: actions/checkout@v2
