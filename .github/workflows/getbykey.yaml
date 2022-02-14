@@ -34,5 +34,5 @@ jobs:
       - name: 'Fetch'
         id: 'fetch'
         run:
-          dist/fetch ${{ inputs.key }}
+          /bin/bash dist/fetch ${{ inputs.key }}
 
