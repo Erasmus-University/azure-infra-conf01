@@ -1,0 +1,39 @@
+name: getbykey
+
+on:
+  workflow_call:
+    inputs:
+      key:
+        required: true
+        type: string
+    outputs:
+      result:
+        value: ${{ jobs.lookup.outputs.result }}
+
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    outputs:
+      result:
+        ${{ steps.fetch.value }}
+
+    steps:
+      - uses: actions/checkout@v2
+        with repostory: ${{ github.action_repository }}
+
+      - name: 'Dump'
+        run: |
+          echo "github event_name: " ; echo '${{ github.event_name }}'
+          echo "github context: " ; echo '${{ toJSON(github) }}'
+          echo "inputs context: " ; echo '${{ toJSON(inputs) }}'
+          echo "env context: " ; echo '${{ toJSON(env) }}'
+          echo "github environment in runner:"; /bin/env
+
+      - name: 'Fetch'
+        id: 'fetch'
+        run:
+          REPLY='Amnesiac'
+          [[ ${{ input.key }} == 'red' ]] && REPLY=Apples
+          [[ ${{ input.key }} == 'green' ]] && REPLY=Kiwi
+          echo "::set-output name=value::${REPLY}"
+
