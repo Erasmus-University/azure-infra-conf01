@@ -28,6 +28,7 @@ jobs:
           echo "inputs context: " ; echo '${{ toJSON(inputs) }}'
           echo "env context: " ; echo '${{ toJSON(env) }}'
           echo "github environment in runner:"; /bin/env
+          echo '-----'
 
       - name: 'Fetch'
         id: 'fetch'
