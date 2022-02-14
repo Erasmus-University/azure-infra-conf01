@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repostory: ${{ github.action_repository }}
+          repository: ${{ github.action_repository }}
 
       - name: 'Dump'
         run: |
