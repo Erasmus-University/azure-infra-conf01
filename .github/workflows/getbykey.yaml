@@ -20,7 +20,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: ${{ github.action_repository }}
+          #repository: ${{ github.action_repository }}
+          repository: Erasmus-University/azure-infra-conf01
 
       - name: 'Dump'
         run: |
