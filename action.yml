@@ -12,4 +12,4 @@ inputs:
 
 runs:
   using: docker
-  main: bash dist/fetch ${{ inputs.key }}
+  main: bash dist/fetch
