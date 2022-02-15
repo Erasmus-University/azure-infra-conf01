@@ -1,5 +1,7 @@
 #!/bin/bash
 
+if [[ -n $INPUT_KEY ]]; then set $INPUT_KEY; fi
+
 REPLY='Amnesiac'
 [[ $1 == 'red' ]] && REPLY=Apples
 [[ $1 == 'green' ]] && REPLY=Kiwi
