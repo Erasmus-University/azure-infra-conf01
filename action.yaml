@@ -1,0 +1,15 @@
+name: Assemble
+
+inputs:
+  key:
+    description: Lookup input key
+    required: true
+
+#outputs:
+#  result:
+#    description: Lookup result
+#    value: ${{ steps.xxx.value }}
+
+runs:
+  using: bash
+  main: dist/fetch ${{ inputs.key }}
