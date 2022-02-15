@@ -11,5 +11,5 @@ inputs:
 #    value: ${{ steps.xxx.value }}
 
 runs:
-  using: bash
-  main: dist/fetch ${{ inputs.key }}
+  using: docker
+  main: bash dist/fetch ${{ inputs.key }}
